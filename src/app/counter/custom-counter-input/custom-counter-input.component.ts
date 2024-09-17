@@ -3,6 +3,7 @@ import { Store } from '@ngrx/store';
 import { addDynamically, changeChannelName } from 'src/app/state/counter.actions';
 import { getChannelName } from 'src/app/state/counter.selectors';
 import { Counter } from 'src/app/state/counter.state';
+import { AppState } from 'src/app/store/app.state';
 
 @Component({
   selector: 'app-custom-counter-input',
@@ -12,7 +13,7 @@ import { Counter } from 'src/app/state/counter.state';
 export class CustomCounterInputComponent implements OnInit {
 value!:number
 channelName:string=''
-  constructor(private store:Store<{counter:Counter}>) { }
+  constructor(private store:Store<AppState>) { }
 
   ngOnInit(): void {
     this.store.select(getChannelName).subscribe(data=>{
