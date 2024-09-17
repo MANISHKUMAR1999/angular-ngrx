@@ -10,6 +10,11 @@ import { StoreModule } from '@ngrx/store';
 import { counterReducer } from './state/counter.reducer';
 import { CustomCounterInputComponent } from './counter/custom-counter-input/custom-counter-input.component';
 import { FormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
+import { HeadersComponent } from './shared/components/headers/headers.component';
+import { PostlistComponent } from './post/postlist/postlist.component';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -18,7 +23,10 @@ import { FormsModule } from '@angular/forms';
    
     CounterOutputComponent,
     CounterComponent,
-    CustomCounterInputComponent
+    CustomCounterInputComponent,
+    HomeComponent,
+    HeadersComponent,
+    PostlistComponent
   ],
   imports: [
     BrowserModule,
@@ -26,6 +34,10 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     StoreModule.forRoot({
       counter:counterReducer
+    }),
+    StoreDevtoolsModule.instrument({
+    
+      logOnly:environment.production
     })
   ],
   providers: [],
