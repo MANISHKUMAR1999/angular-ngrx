@@ -30,7 +30,7 @@ import { EditPostComponent } from './post/edit-post/edit-post.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    StoreModule.forRoot(AppReducers),
+    StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument({
     
       logOnly:environment.production
