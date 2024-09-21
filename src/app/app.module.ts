@@ -16,7 +16,8 @@ import { postsReducer } from './post/postlist/state/post.reducers';
 import { AppReducers } from './store/app.state';
 import { AddPostComponent } from './post/add-post/add-post.component';
 import { EditPostComponent } from './post/edit-post/edit-post.component';
-
+import { EffectsModule } from '@ngrx/effects';
+import {HttpClientModule} from '@angular/common/http'
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +30,11 @@ import { EditPostComponent } from './post/edit-post/edit-post.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+
     ReactiveFormsModule,
+    HttpClientModule,
+  
+    EffectsModule.forRoot([]),
     StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument({
     

@@ -6,6 +6,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { AUTH_STATE_NAME } from './state/auth.selector';
 import { AuthReducer } from './state/auth.reducers';
+import { EffectsModule } from '@ngrx/effects';
+import { AuthEffects } from './state/auth.effects';
 
 const routes: Routes = [
   {
@@ -21,6 +23,7 @@ const routes: Routes = [
   declarations: [LoginComponent],
   imports: [
     CommonModule,
+    EffectsModule.forFeature([AuthEffects]),
     StoreModule.forFeature(AUTH_STATE_NAME,AuthReducer),
     RouterModule.forChild(routes),
     ReactiveFormsModule,
