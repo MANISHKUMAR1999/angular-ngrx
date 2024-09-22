@@ -17,13 +17,15 @@ import { AppReducers } from './store/app.state';
 import { AddPostComponent } from './post/add-post/add-post.component';
 import { EditPostComponent } from './post/edit-post/edit-post.component';
 import { EffectsModule } from '@ngrx/effects';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component'
 @NgModule({
   declarations: [
     AppComponent,
    
     HomeComponent,
     HeadersComponent,
+    LoadingSpinnerComponent,
    
   ],
   imports: [
@@ -35,7 +37,7 @@ import {HttpClientModule} from '@angular/common/http'
     HttpClientModule,
   
     EffectsModule.forRoot([]),
-    StoreModule.forRoot({}),
+    StoreModule.forRoot(AppReducers),
     StoreDevtoolsModule.instrument({
     
       logOnly:environment.production
