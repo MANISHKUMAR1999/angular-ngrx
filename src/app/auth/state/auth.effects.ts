@@ -15,7 +15,7 @@ export class AuthEffects {
       ofType(loginStart),
       exhaustMap((action) => {
         return this._authService.login(action.email, action.password).pipe(
-          map((data) => {
+          map(() => {
             return loginSuccess();
           })
         );
