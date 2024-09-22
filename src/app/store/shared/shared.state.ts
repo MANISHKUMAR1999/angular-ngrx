@@ -1,10 +1,12 @@
 
 
 export interface sharedState {
-    showLoadingSpinner:boolean
+    showLoadingSpinner:boolean,
+    errorMessage:string
 }
 
 export const initialState:sharedState = {
-    showLoadingSpinner:false
+    showLoadingSpinner:false,
+    errorMessage:''
 
 }

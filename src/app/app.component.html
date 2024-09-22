@@ -1,4 +1,10 @@
 
 <app-headers></app-headers>
 <app-loading-spinner *ngIf="showLoading | async"></app-loading-spinner>
+
+<div class="card alert alert-danger " *ngIf="errorMessage | async as error">
+    <div class="card-body">
+        {{error}}
+    </div>
+  </div>
 <router-outlet></router-outlet>
