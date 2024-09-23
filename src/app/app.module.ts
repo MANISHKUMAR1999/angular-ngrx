@@ -19,6 +19,7 @@ import { EditPostComponent } from './post/edit-post/edit-post.component';
 import { EffectsModule } from '@ngrx/effects';
 import {HttpClientModule} from '@angular/common/http';
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component'
+import { AuthEffects } from './auth/state/auth.effects';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +37,7 @@ import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.compo
     ReactiveFormsModule,
     HttpClientModule,
   
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot([AuthEffects]),
     StoreModule.forRoot(AppReducers),
     StoreDevtoolsModule.instrument({
     
