@@ -5,6 +5,6 @@ export interface AuthResponseData  {
     refreshToke:string,
     expiresIn:string,
     localId:string,
-    registered:boolean
+    registered?:boolean
 
 }
