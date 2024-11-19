@@ -1,0 +1,12 @@
+
+/* Optional: Additional customizations for light/dark mode */
+[data-bs-theme="dark"] {
+    background-color: #121212;
+    color: white;
+  }
+  
+  [data-bs-theme="light"] {
+    background-color: #ffffff;
+    color: black;
+  }
+  

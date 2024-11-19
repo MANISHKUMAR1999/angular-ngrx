@@ -1,4 +1,25 @@
 
+
+<div class="container mt-5">
+  <h1>Application Label</h1>
+  <div class="form-check form-switch mt-3">
+    <input 
+      class="form-check-input" 
+      type="checkbox" 
+      id="themeSwitch" 
+      [checked]="theme === 'dark'" 
+      (change)="toggleTheme()"
+    />
+    <label class="form-check-label" for="themeSwitch">
+      {{ theme === 'dark' ? 'Dark Mode' : 'Light Mode' }}
+    </label>
+  </div>
+  <p class="mt-3">
+    The theme is now set to: <strong>{{ theme }}</strong>.
+  </p>
+</div>
+
+
 <app-headers></app-headers>
 <app-loading-spinner *ngIf="showLoading | async"></app-loading-spinner>
 
